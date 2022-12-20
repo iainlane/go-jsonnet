@@ -1469,7 +1469,7 @@ func tomlEncodeString(s string) string {
 }
 
 // tomlEncodeKey encodes a key - returning same string if it does not need quoting,
-// otherwise return it quoted; returns empty key as ''
+// otherwise return it quoted; returns empty key as ”
 func tomlEncodeKey(s string) string {
 	bareAllowed := true
 
@@ -2169,7 +2169,6 @@ var funcBuiltins = buildBuiltinMap([]builtin{
 	&binaryBuiltin{name: "modulo", function: builtinModulo, params: ast.Identifiers{"x", "y"}},
 	&unaryBuiltin{name: "md5", function: builtinMd5, params: ast.Identifiers{"s"}},
 	&binaryBuiltin{name: "lstripChars", function: builtinLstripChars, params: ast.Identifiers{"str", "chars"}},
-	&binaryBuiltin{name: "rstripChars", function: builtinRstripChars, params: ast.Identifiers{"str", "chars"}},
 	&binaryBuiltin{name: "stripChars", function: builtinStripChars, params: ast.Identifiers{"str", "chars"}},
 	&ternaryBuiltin{name: "substr", function: builtinSubstr, params: ast.Identifiers{"str", "from", "len"}},
 	&ternaryBuiltin{name: "splitLimit", function: builtinSplitLimit, params: ast.Identifiers{"str", "c", "maxsplits"}},
